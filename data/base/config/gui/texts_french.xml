@@ -1,0 +1,14 @@
+<ModOps>
+  <ModOp Add="/TextExport/Texts[1]">
+    <Text>
+      <Text>ARRIVÉES AU PORT - chargement...</Text>
+      <LineId>2006999900</LineId>
+    </Text>
+  </ModOp>
+  <ModOp Add="/TextExport/Texts[1]">
+    <Text>
+      <Text>Harbor Arrivals - Ouvrir</Text>
+      <LineId>2006999901</LineId>
+    </Text>
+  </ModOp>
+</ModOps>

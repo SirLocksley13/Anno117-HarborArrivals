@@ -1,0 +1,34 @@
+{
+  "ModID": "harbor-arrivals-sirlocksley-prototype",
+  "Version": "1.0.0",
+  "Anno": 8,
+  "Difficulty": "cheat",
+  "RequiresNewGame": false,
+  "SafeToRemove": true,
+  "ModName": {
+    "English": "Harbor Arrivals",
+    "German": "Harbor Arrivals",
+    "French": "Harbor Arrivals"
+  },
+  "Category": {
+    "English": "Mod",
+    "German": "Mod",
+    "French": "Mod"
+  },
+  "Description": {
+    "English": "Live read-only harbor dashboard for Anno 117. Select a harbor or trading post and press Ctrl+Alt+H to see confirmed arrivals and current onboard cargo on the native right-side panel, plus harbor status, loading/unloading, waiting ships, and other serving ships on the parchment. Numbered parchment entries jump directly to the matching ship through the bundled shared SirLocksley Entry 1–9 / Back controls. Current cargo is shown as On board and is not presented as future unloading intent. Dashboard and warning text follow the game language in English, German, or French.",
+    "German": "Live-Hafenübersicht für Anno 117 mit rein lesendem Zugriff. Wähle einen Hafen oder Handelsposten aus und drücke Ctrl+Alt+H, um bestätigte Ankünfte und die aktuelle Ladung an Bord im nativen rechten Bereich zu sehen. Das Pergament zeigt Hafenstatus, Be- und Entladen, wartende Schiffe und weitere Schiffe, die diesen Hafen bedienen. Nummerierte Pergament-Einträge springen über die mitgelieferten gemeinsamen SirLocksley-Steuerungen Eintrag 1–9 / Zurück direkt zum jeweiligen Schiff. Aktuelle Ladung wird als „An Bord“ angezeigt und nicht als zukünftige Entladeabsicht interpretiert. Dashboard- und Warntexte folgen der Spielsprache auf Englisch, Deutsch oder Französisch.",
+    "French": "Tableau de bord portuaire en direct et en lecture seule pour Anno 117. Sélectionnez un port ou un comptoir commercial puis appuyez sur Ctrl+Alt+H pour afficher les arrivées confirmées et la cargaison actuellement à bord dans le panneau natif de droite. Le parchemin affiche l’état du port, les opérations de chargement/déchargement, les navires en attente et les autres navires desservant ce port. Les entrées numérotées du parchemin permettent d’accéder directement au navire correspondant grâce aux commandes partagées SirLocksley Entrée 1–9 / Retour incluses. La cargaison actuelle est indiquée comme « À bord » et n’est pas présentée comme une intention future de déchargement. Le tableau de bord et les avertissements suivent la langue du jeu en anglais, allemand ou français."
+  },
+  "CreatorName": "Dr. Enrico Handrick",
+  "CreatorContact": "https://github.com/SirLocksley13",
+  "Scripts": {
+    "Modules": [
+      "harborarrivals/harbor-arrivals.lua",
+      "harborarrivals/parchment-controls-consumer.lua"
+    ],
+    "Init": "HarborArrivals = require(\"harbor-arrivals\"); SirLocksleyPC04 = require(\"parchment-controls-consumer\"); SirLocksleyPC04:SetRoot(HarborArrivals)",
+    "Load": "HarborArrivals:Load()",
+    "Tick": "HarborArrivals:Tick()"
+  }
+}

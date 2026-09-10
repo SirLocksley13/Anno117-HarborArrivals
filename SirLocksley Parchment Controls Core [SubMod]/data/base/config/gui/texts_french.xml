@@ -1,0 +1,62 @@
+<ModOps>
+  <ModOp Add="/TextExport/Texts[1]">
+    <Text>
+      <Text>Commandes du parchemin - Entrée 1</Text>
+      <LineId>2006999701</LineId>
+    </Text>
+  </ModOp>
+  <ModOp Add="/TextExport/Texts[1]">
+    <Text>
+      <Text>Commandes du parchemin - Entrée 2</Text>
+      <LineId>2006999702</LineId>
+    </Text>
+  </ModOp>
+  <ModOp Add="/TextExport/Texts[1]">
+    <Text>
+      <Text>Commandes du parchemin - Entrée 3</Text>
+      <LineId>2006999703</LineId>
+    </Text>
+  </ModOp>
+  <ModOp Add="/TextExport/Texts[1]">
+    <Text>
+      <Text>Commandes du parchemin - Entrée 4</Text>
+      <LineId>2006999704</LineId>
+    </Text>
+  </ModOp>
+  <ModOp Add="/TextExport/Texts[1]">
+    <Text>
+      <Text>Commandes du parchemin - Entrée 5</Text>
+      <LineId>2006999705</LineId>
+    </Text>
+  </ModOp>
+  <ModOp Add="/TextExport/Texts[1]">
+    <Text>
+      <Text>Commandes du parchemin - Entrée 6</Text>
+      <LineId>2006999706</LineId>
+    </Text>
+  </ModOp>
+  <ModOp Add="/TextExport/Texts[1]">
+    <Text>
+      <Text>Commandes du parchemin - Entrée 7</Text>
+      <LineId>2006999707</LineId>
+    </Text>
+  </ModOp>
+  <ModOp Add="/TextExport/Texts[1]">
+    <Text>
+      <Text>Commandes du parchemin - Entrée 8</Text>
+      <LineId>2006999708</LineId>
+    </Text>
+  </ModOp>
+  <ModOp Add="/TextExport/Texts[1]">
+    <Text>
+      <Text>Commandes du parchemin - Entrée 9</Text>
+      <LineId>2006999709</LineId>
+    </Text>
+  </ModOp>
+  <ModOp Add="/TextExport/Texts[1]">
+    <Text>
+      <Text>Commandes du parchemin - Retour</Text>
+      <LineId>2006999710</LineId>
+    </Text>
+  </ModOp>
+</ModOps>

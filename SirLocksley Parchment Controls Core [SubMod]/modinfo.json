@@ -1,0 +1,21 @@
+{
+  "ModID": "sirlocksley-parchment-controls-core",
+  "Version": "1.0.2",
+  "Anno": 8,
+  "Difficulty": "cheat",
+  "RequiresNewGame": false,
+  "SafeToRemove": true,
+  "ModName": {
+    "English": "SirLocksley Parchment Controls Core",
+    "German": "SirLocksley Parchment Controls Core",
+    "French": "SirLocksley Parchment Controls Core"
+  },
+  "Category": {
+    "English": "Mod",
+    "German": "Mod",
+    "French": "Mod"
+  },
+  "Description": "Shared configurable Entry 1–9 and Back controls for SirLocksley parchment-based utility mods. This nested core is deduplicated by ModID when multiple compatible utilities bundle it.",
+  "CreatorName": "Dr. Enrico Handrick",
+  "CreatorContact": "https://github.com/SirLocksley13"
+}

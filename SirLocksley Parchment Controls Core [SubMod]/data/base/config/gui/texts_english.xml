@@ -1,0 +1,62 @@
+<ModOps>
+  <ModOp Add="/TextExport/Texts[1]">
+    <Text>
+      <Text>Parchment Controls - Entry 1</Text>
+      <LineId>2006999701</LineId>
+    </Text>
+  </ModOp>
+  <ModOp Add="/TextExport/Texts[1]">
+    <Text>
+      <Text>Parchment Controls - Entry 2</Text>
+      <LineId>2006999702</LineId>
+    </Text>
+  </ModOp>
+  <ModOp Add="/TextExport/Texts[1]">
+    <Text>
+      <Text>Parchment Controls - Entry 3</Text>
+      <LineId>2006999703</LineId>
+    </Text>
+  </ModOp>
+  <ModOp Add="/TextExport/Texts[1]">
+    <Text>
+      <Text>Parchment Controls - Entry 4</Text>
+      <LineId>2006999704</LineId>
+    </Text>
+  </ModOp>
+  <ModOp Add="/TextExport/Texts[1]">
+    <Text>
+      <Text>Parchment Controls - Entry 5</Text>
+      <LineId>2006999705</LineId>
+    </Text>
+  </ModOp>
+  <ModOp Add="/TextExport/Texts[1]">
+    <Text>
+      <Text>Parchment Controls - Entry 6</Text>
+      <LineId>2006999706</LineId>
+    </Text>
+  </ModOp>
+  <ModOp Add="/TextExport/Texts[1]">
+    <Text>
+      <Text>Parchment Controls - Entry 7</Text>
+      <LineId>2006999707</LineId>
+    </Text>
+  </ModOp>
+  <ModOp Add="/TextExport/Texts[1]">
+    <Text>
+      <Text>Parchment Controls - Entry 8</Text>
+      <LineId>2006999708</LineId>
+    </Text>
+  </ModOp>
+  <ModOp Add="/TextExport/Texts[1]">
+    <Text>
+      <Text>Parchment Controls - Entry 9</Text>
+      <LineId>2006999709</LineId>
+    </Text>
+  </ModOp>
+  <ModOp Add="/TextExport/Texts[1]">
+    <Text>
+      <Text>Parchment Controls - Back</Text>
+      <LineId>2006999710</LineId>
+    </Text>
+  </ModOp>
+</ModOps>

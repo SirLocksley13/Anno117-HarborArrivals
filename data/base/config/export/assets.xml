@@ -1,0 +1,179 @@
+<ModOps>
+  <ModOp Type="add" GUID="2001271" Path="/Values/ShortcutConfig/InputBindings">
+    <Item>
+      <Command>HarborArrivals.Open(HarborArrivals)</Command>
+      <Text>2006999901</Text>
+      <Active>Session</Active>
+      <Configurable>1</Configurable>
+      <Identifier>SirLocksleyHarborArrivalsOpen</Identifier>
+      <AvailableOnPlatforms>PC</AvailableOnPlatforms>
+      <HideInOptionMenu>0</HideInOptionMenu>
+      <AllowMultipleShortcuts>1</AllowMultipleShortcuts>
+      <InputTypes>
+        <Modern><KeyType>Control;Alt;H</KeyType></Modern>
+        <Legacy><KeyType>Control;Alt;H</KeyType></Legacy>
+      </InputTypes>
+    </Item>
+  </ModOp>
+
+  <ModOp Add="/AssetList/Groups[last()]">
+    <Group>
+      <Assets />
+    </Group>
+  </ModOp>
+
+  <Asset>
+    <Template>TextPopup</Template>
+    <Values>
+      <Standard>
+        <GUID>2099904</GUID>
+        <Name>Harbor Arrivals Main Popup</Name>
+      </Standard>
+      <TextPopup>
+        <Type>ScrollVertical01</Type>
+        <Pages>
+          <Item>
+            <Text>2006999900</Text>
+          </Item>
+        </Pages>
+      </TextPopup>
+    </Values>
+  </Asset>
+
+  <Asset>
+    <Template>Sequence</Template>
+    <Values>
+      <Standard>
+        <GUID>2099903</GUID>
+        <Name>Open Harbor Arrivals Main Popup</Name>
+      </Standard>
+      <Sequence>
+        <SequenceActions>
+          <Item>
+            <Action>
+              <Template>ActionTriggerTextPopup</Template>
+              <Values>
+                <ActionTriggerTextPopup>
+                  <TextPopup>2099904</TextPopup>
+                </ActionTriggerTextPopup>
+                <Action />
+              </Values>
+            </Action>
+          </Item>
+        </SequenceActions>
+      </Sequence>
+      <QuestComponentConnector />
+      <QuestComponent />
+    </Values>
+  </Asset>
+
+  <Asset>
+    <Template>FunctionImmediate</Template>
+    <Values>
+      <Standard>
+        <GUID>2099902</GUID>
+        <Name>Harbor Arrivals Main Popup Function</Name>
+      </Standard>
+      <Function>
+        <FunctionSuccessOutput>
+          <Item><Component>2099903</Component></Item>
+        </FunctionSuccessOutput>
+      </Function>
+      <QuestComponent />
+      <PreConditionList>
+        <Condition>
+          <Template>ConditionAlwaysTrue</Template>
+          <Values>
+            <Condition />
+            <ConditionAlwaysTrue />
+          </Values>
+        </Condition>
+      </PreConditionList>
+    </Values>
+  </Asset>
+
+  <Asset>
+    <Template>StoryLine</Template>
+    <Values>
+      <Standard>
+        <GUID>2099901</GUID>
+        <Name>Harbor Arrivals Main Popup Storyline</Name>
+      </Standard>
+      <StoryLine>
+        <StartConnector>
+          <Item><Component>2099902</Component></Item>
+        </StartConnector>
+      </StoryLine>
+      <QuestComponent />
+      <QuestComponentConnector />
+    </Values>
+  </Asset>
+
+
+  <!-- Compact missing-harbor warning. Mirrors the proven UI Lab v0.7 pattern:
+       minimal ExplainerPopup asset; Lua creates/populates Content at runtime. -->
+  <Asset>
+    <Template>ExplainerPopup</Template>
+    <Values>
+      <Standard>
+        <GUID>2099914</GUID>
+        <Name>Harbor Arrivals Compact Warning</Name>
+      </Standard>
+      <ExplainerPopup />
+    </Values>
+  </Asset>
+
+  <Asset>
+    <Template>Sequence</Template>
+    <Values>
+      <Standard><GUID>2099913</GUID><Name>Trigger Harbor Arrivals Compact Warning</Name></Standard>
+      <Sequence>
+        <SequenceActions>
+          <Item>
+            <Action>
+              <Template>ActionTriggerExplainerPopup</Template>
+              <Values>
+                <ActionTriggerExplainerPopup>
+                  <ExplainerPopup>2099914</ExplainerPopup>
+                </ActionTriggerExplainerPopup>
+                <Action />
+              </Values>
+            </Action>
+          </Item>
+        </SequenceActions>
+      </Sequence>
+      <QuestComponentConnector />
+      <QuestComponent />
+    </Values>
+  </Asset>
+
+  <Asset>
+    <Template>FunctionImmediate</Template>
+    <Values>
+      <Standard><GUID>2099912</GUID><Name>Harbor Arrivals Compact Warning Function</Name></Standard>
+      <Function>
+        <FunctionSuccessOutput><Item><Component>2099913</Component></Item></FunctionSuccessOutput>
+      </Function>
+      <QuestComponent />
+      <PreConditionList>
+        <Condition>
+          <Template>ConditionAlwaysTrue</Template>
+          <Values><Condition /><ConditionAlwaysTrue /></Values>
+        </Condition>
+      </PreConditionList>
+    </Values>
+  </Asset>
+
+  <Asset>
+    <Template>StoryLine</Template>
+    <Values>
+      <Standard><GUID>2099911</GUID><Name>Harbor Arrivals Compact Warning Storyline</Name></Standard>
+      <StoryLine>
+        <StartConnector><Item><Component>2099912</Component></Item></StartConnector>
+      </StoryLine>
+      <QuestComponent />
+      <QuestComponentConnector />
+    </Values>
+  </Asset>
+
+</ModOps>
