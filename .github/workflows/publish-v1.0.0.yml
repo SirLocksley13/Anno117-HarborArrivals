@@ -1,0 +1,86 @@
+name: Publish Harbor Arrivals v1.0.0
+
+on:
+  push:
+    paths:
+      - '.github/workflows/publish-v1.0.0.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Reconstruct and verify source package
+        shell: bash
+        run: |
+          set -euo pipefail
+          cat \
+            staging/v100.00 \
+            staging/v100.01 \
+            staging/v100.02 \
+            staging/v100.03 \
+            staging/v100.04 \
+            staging/v100.05 \
+            staging/v100.06 \
+            staging/v100.07 \
+            staging/v100.08 \
+            staging/v100.09a \
+            staging/v100.09b \
+            staging/v100.09c \
+            staging/v100.09d \
+            > /tmp/harbor-source.b64
+          base64 -d /tmp/harbor-source.b64 > /tmp/Harbor_Arrivals_GitHub_Source_v1.0.0.zip
+          echo "d9f74ca6f7b8282772a47fc64f16fa5c28de18a8be52cebbb295f0462f78dbfd  /tmp/Harbor_Arrivals_GitHub_Source_v1.0.0.zip" | sha256sum -c -
+          unzip -t /tmp/Harbor_Arrivals_GitHub_Source_v1.0.0.zip
+          rm -rf /tmp/harbor-src
+          mkdir -p /tmp/harbor-src
+          unzip -q /tmp/Harbor_Arrivals_GitHub_Source_v1.0.0.zip -d /tmp/harbor-src
+
+      - name: Publish source tree
+        shell: bash
+        run: |
+          set -euo pipefail
+          cp -a /tmp/harbor-src/. ./
+          rm -rf staging
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          if ! git diff --cached --quiet; then
+            git commit -m "Publish Harbor Arrivals v1.0.0 source"
+            git push
+          fi
+
+      - name: Build install package
+        shell: bash
+        run: |
+          set -euo pipefail
+          rm -rf /tmp/ha-release
+          mkdir -p "/tmp/ha-release/Harbor Arrivals"
+          cp -a harborarrivals "/tmp/ha-release/Harbor Arrivals/"
+          cp -a data "/tmp/ha-release/Harbor Arrivals/"
+          cp -a "SirLocksley Parchment Controls Core [SubMod]" "/tmp/ha-release/Harbor Arrivals/"
+          cp modinfo.json "/tmp/ha-release/Harbor Arrivals/"
+          cp README.md "/tmp/ha-release/Harbor Arrivals/README.txt"
+          (cd /tmp/ha-release && zip -qr "/tmp/Harbor_Arrivals_v1.0.0.zip" "Harbor Arrivals")
+          unzip -t /tmp/Harbor_Arrivals_v1.0.0.zip
+          test "$(unzip -Z1 /tmp/Harbor_Arrivals_v1.0.0.zip | grep -v '^Harbor Arrivals/' | wc -l)" -eq 0
+          sha256sum /tmp/Harbor_Arrivals_v1.0.0.zip
+
+      - name: Create GitHub release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          gh release create v1.0.0 \
+            /tmp/Harbor_Arrivals_v1.0.0.zip \
+            --title "Harbor Arrivals v1.0.0" \
+            --notes-file RELEASE_NOTES_v1.0.0.md \
+            --target main
